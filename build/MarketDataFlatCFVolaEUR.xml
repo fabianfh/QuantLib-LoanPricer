@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vectorVolaObs>
+  <name>capVolaEUR</name>
+  <VolaObs>
+    <settlementDays>2</settlementDays>
+    <nIndexUnits>3</nIndexUnits>
+    <indexUnit>Months</indexUnit>
+    <nTermUnits>1</nTermUnits>
+    <termUnit>Years</termUnit>
+    <strikeUnit></strikeUnit>
+    <strike>-0.005</strike>
+    <vola>0.002300</vola>
+  </VolaObs>
+  <VolaObs>
+    <settlementDays>2</settlementDays>
+    <nIndexUnits>3</nIndexUnits>
+    <indexUnit>Months</indexUnit>
+    <nTermUnits>2</nTermUnits>
+    <termUnit>Years</termUnit>
+    <strikeUnit></strikeUnit>
+    <strike>-0.005</strike>
+    <vola>0.00240</vola>
+  </VolaObs>
+  <VolaObs>
+    <settlementDays>2</settlementDays>
+    <nIndexUnits>3</nIndexUnits>
+    <indexUnit>Months</indexUnit>
+    <nTermUnits>5</nTermUnits>
+    <termUnit>Years</termUnit>
+    <strikeUnit></strikeUnit>
+    <strike>-0.005</strike>
+    <vola>0.0026</vola>
+  </VolaObs>
+  
+  
+  <VolaObs>
+    <settlementDays>2</settlementDays>
+    <nIndexUnits>3</nIndexUnits>
+    <indexUnit>Months</indexUnit>
+    <nTermUnits>1</nTermUnits>
+    <termUnit>Years</termUnit>
+    <strikeUnit></strikeUnit>
+    <strike>0.00</strike>
+    <vola>0.002500</vola>
+  </VolaObs>
+  <VolaObs>
+    <settlementDays>2</settlementDays>
+    <nIndexUnits>3</nIndexUnits>
+    <indexUnit>Months</indexUnit>
+    <nTermUnits>2</nTermUnits>
+    <termUnit>Years</termUnit>
+    <strikeUnit></strikeUnit>
+    <strike>0.00</strike>
+    <vola>0.002760</vola>
+  </VolaObs>
+  <VolaObs>
+    <settlementDays>2</settlementDays>
+    <nIndexUnits>3</nIndexUnits>
+    <indexUnit>Months</indexUnit>
+    <nTermUnits>5</nTermUnits>
+    <termUnit>Years</termUnit>
+    <strikeUnit></strikeUnit>
+    <strike>0.00</strike>
+    <vola>0.0035</vola>
+  </VolaObs>  
+  <VolaObs>
+    <settlementDays>2</settlementDays>
+    <nIndexUnits>3</nIndexUnits>
+    <indexUnit>Months</indexUnit>
+    <nTermUnits>1</nTermUnits>
+    <termUnit>Years</termUnit>
+    <strikeUnit></strikeUnit>
+    <strike>0.005</strike>
+    <vola>0.001670</vola>
+  </VolaObs>
+  <VolaObs>
+    <settlementDays>2</settlementDays>
+    <nIndexUnits>3</nIndexUnits>
+    <indexUnit>Months</indexUnit>
+    <nTermUnits>2</nTermUnits>
+    <termUnit>Years</termUnit>
+    <strikeUnit></strikeUnit>
+    <strike>0.005</strike>
+    <vola>0.0024</vola>
+  </VolaObs>
+  <VolaObs>
+    <settlementDays>2</settlementDays>
+    <nIndexUnits>3</nIndexUnits>
+    <indexUnit>Months</indexUnit>
+    <nTermUnits>5</nTermUnits>
+    <termUnit>Years</termUnit>
+    <strikeUnit></strikeUnit>
+    <strike>0.005</strike>
+    <vola>0.0037</vola>
+  </VolaObs>
+ </vectorVolaObs>
+
+
+
+
+
+

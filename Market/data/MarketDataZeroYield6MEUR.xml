@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<vectorSwapObs>
+  <SwapObs>
+    <settlementDays>2</settlementDays>
+    <nIndexUnits>3</nIndexUnits>
+    <indexUnit>Months</indexUnit>
+    <nTermUnits>6</nTermUnits>
+    <termUnit>Months</termUnit>
+    <rate>-0.0036</rate>
+  </SwapObs>
+  <SwapObs>
+    <settlementDays>2</settlementDays>
+    <nIndexUnits>3</nIndexUnits>
+    <indexUnit>Months</indexUnit>
+    <nTermUnits>1</nTermUnits>
+    <termUnit>Years</termUnit>
+    <rate>-0.0034</rate>
+  </SwapObs>
+  <SwapObs>
+    <settlementDays>2</settlementDays>
+    <nIndexUnits>3</nIndexUnits>
+    <indexUnit>Months</indexUnit>
+    <nTermUnits>2</nTermUnits>
+    <termUnit>Years</termUnit>
+    <rate>-0.0034</rate>
+  </SwapObs>
+  <SwapObs>
+    <settlementDays>2</settlementDays>
+    <nIndexUnits>3</nIndexUnits>
+    <indexUnit>Months</indexUnit>
+    <nTermUnits>5</nTermUnits>
+    <termUnit>Years</termUnit>
+    <rate>-0.0034</rate>
+  </SwapObs>
+  <SwapObs>
+    <settlementDays>2</settlementDays>
+    <nIndexUnits>3</nIndexUnits>
+    <indexUnit>Months</indexUnit>
+    <nTermUnits>10</nTermUnits>
+    <termUnit>Years</termUnit>
+    <rate>-0.0033</rate>
+  </SwapObs>
+  <SwapObs>
+    <settlementDays>2</settlementDays>
+    <nIndexUnits>3</nIndexUnits>
+    <indexUnit>Months</indexUnit>
+    <nTermUnits>20</nTermUnits>
+    <termUnit>Years</termUnit>
+    <rate>-0.0032</rate>
+  </SwapObs>
+  <SwapObs>
+    <settlementDays>2</settlementDays>
+    <nIndexUnits>3</nIndexUnits>
+    <indexUnit>Months</indexUnit>
+    <nTermUnits>30</nTermUnits>
+    <termUnit>Years</termUnit>
+    <rate>-0.0032</rate>
+  </SwapObs>
+</vectorSwapObs>
+
+
+
