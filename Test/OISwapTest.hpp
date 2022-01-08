@@ -3,7 +3,7 @@
 
 #include <boost/shared_ptr.hpp>
 #include <ql/termstructures/yield/all.hpp>
-#include "../BootStrapper/BootStrapper.hpp"cd 
+#include "../BootStrapper/BootStrapper.hpp" 
 
 namespace BootStrapper { 
   class OISwapTest {

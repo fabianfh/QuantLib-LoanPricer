@@ -15,6 +15,7 @@
 #include "Market/MarketConvention.hpp"
 #include "BootStrapper/BootStrapper.hpp"
 #include "Test/LiborSwapTest.hpp"
+#include "Test/OISwapTest.hpp"
 
 //using namespace QuantLib;
 //using namespace std;
@@ -34,11 +35,11 @@ int main(int size, char *[])
 	std::map<std::string, boost::shared_ptr<BootStrapper::PiecewiseFlatForward> > yieldCurves = Bootstrap(asOfDate, md, mc);
 	boost::shared_ptr<BootStrapper::PiecewiseFlatForward> discCurve = yieldCurves["OISwapEUR"];
 	boost::shared_ptr<BootStrapper::PiecewiseFlatForward> fwdCurve = yieldCurves["Libor3MEUR"];
-    std::cout << "here" << std::endl;
+
 	
 	bool success = true;
-	//success &= BootStrapper::OISwapTest::testBootstrap(discCurve, mc, md, md.tolerance);
-	//success &= LiborSwapTest::testBootstrap(discCurve, fwdCurve, mc, md, md.tolerance);	
+	success &= BootStrapper::OISwapTest::testBootstrap(discCurve, mc, md, md.tolerance);
+	success &= BootStrapper::LiborSwapTest::testBootstrap(discCurve, fwdCurve, mc, md, md.tolerance);	
 /*
 	boost::shared_ptr<QuantLib::YieldTermStructure> singleCurve = md.mdContainer2["EURZeroYields"];
 	std::map<std::string, boost::shared_ptr<QuantLib::OptionletVolatilityStructure> > vols = BootStrapper::BootstrapCaplets(asOfDate, md, mc,
@@ -65,7 +66,7 @@ int main(int size, char *[])
 		  boost::shared_ptr<QuantLib::OptionletVolatilityStructure> volCaplet = vols["EURCapletVolaNormal"];*/
 
 	//BootStrapper::Loans::testLoan(asOfDate, calendar.advance(asOfDate, QuantLib::Period(10, QuantLib::Years)),QuantLib::Quarterly);
-
+	std::cout << success << std::endl;
 	return 0;
 }
 
