@@ -3,7 +3,7 @@
 #define quantlib_test_optionletstripper_hpp
 
 #include <boost/test/unit_test.hpp>
-#include "MarketData.hpp"
+#include "../Market/MarketData.hpp"
 #include "BootStrapper.hpp"
 
 

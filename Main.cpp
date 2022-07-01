@@ -20,6 +20,7 @@
 //using namespace QuantLib;
 //using namespace std;
 
+#pragma warning(suppress : 4996).
 int main(int size, char *[])
 {
 	std::cout << size << std::endl;

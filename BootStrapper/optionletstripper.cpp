@@ -115,7 +115,7 @@ struct CommonVars {
                                                         dayCounter, calendar)));
 
             QL_REQUIRE(!discountingYTS.empty(),
-                       "Could not create discounting yieldcurve")
+                "Could not create discounting yieldcurve");
 
             datesTmp.clear();
             dates.clear();
