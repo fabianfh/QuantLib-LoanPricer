@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vectorDepoObs>  
+  <name>DepoEUR</name>
+  <DepoObs>    
+    <settlementDays>0</settlementDays>
+    <n>1</n>
+    <unit>Days</unit>
+    <rate>0.0110</rate>
+  </DepoObs>
+  <DepoObs>
+    <settlementDays>1</settlementDays>
+    <n>1</n>
+    <unit>Days</unit>
+    <rate>0.0110</rate>
+  </DepoObs>
+  <DepoObs>
+    <settlementDays>2</settlementDays>
+    <n>1</n>
+    <unit>Weeks</unit>
+    <rate>0.0140</rate>
+  </DepoObs>
+  <DepoObs>
+    <settlementDays>2</settlementDays>
+    <n>2</n>
+    <unit>Weeks</unit>
+    <rate>0.0150</rate>
+  </DepoObs>
+  <DepoObs>
+    <settlementDays>2</settlementDays>
+    <n>1</n>
+    <unit>Months</unit>
+    <rate>0.0170</rate>
+  </DepoObs>
+  <DepoObs>
+    <settlementDays>2</settlementDays>
+    <n>2</n>
+    <unit>Months</unit>
+    <rate>0.0190</rate>
+  </DepoObs>
+  <DepoObs>
+    <settlementDays>2</settlementDays>
+    <n>3</n>
+    <unit>Months</unit>
+    <rate>0.0205</rate>
+  </DepoObs>  
+</vectorDepoObs>
+
+

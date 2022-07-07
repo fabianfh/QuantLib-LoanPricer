@@ -4,6 +4,7 @@
 #include <boost/property_tree/ptree.hpp>
 #include <boost/foreach.hpp>
 #include <boost/assign/list_of.hpp>
+#include <boost/filesystem/path.hpp>
 #include <map>
 #include <algorithm>
 #include <ql/termstructures/yield/zeroyieldstructure.hpp>
@@ -187,20 +188,23 @@ namespace BootStrapper
 
 	MarketData::MarketData()
 	{
-		std::ifstream input("MarketDataDepoEUR.xml");
+	
+		boost::filesystem::path full_path(boost::filesystem::path);
+		std::string filePath = "./";
+		std::ifstream input(filePath + "MarketDataDepoEUR.xml");
 		depositData = readDepoObsFromXml(input, "vectorDepoObs");
 		input.close();
-		std::ifstream input2("MarketDataOISwapEUR.xml");
+		std::ifstream input2(filePath + "MarketDataOISwapEUR.xml");
 		eoniaSwapData = readDepoObsFromXml(input2, "vectorDepoObs");
 		input2.close();
-		std::ifstream input3("MarketDataLibor6MSwapEUR.xml");
+		std::ifstream input3(filePath + "MarketDataLibor6MSwapEUR.xml");
 		swapData = readSwapObsFromXml(input3, "vectorSwapObs");
 		input3.close();
-		std::ifstream input4("MarketDataFlatCFVolaEUR.xml");
+		std::ifstream input4(filePath + "MarketDataFlatCFVolaEUR.xml");
 		volSurfaceData = readVolaFromXml(input4, "vectorVolaObs");
 		boost::shared_ptr<CapFloorTermVolSurface> bvs = makeCapFloorVolaSurface(volSurfaceData);
 		mdContainer.insert(make_pair(std::string("EURCapFlatVolaNormal"), bvs));
-		std::ifstream input5("MarketDataZeroYield6MEUR.xml");
+		std::ifstream input5(filePath + "MarketDataZeroYield6MEUR.xml");
 		zeroBondData = readSwapObsFromXml(input5, "vectorSwapObs");
 		MarketConventions mc;
 		boost::shared_ptr<YieldTermStructure> zyc = makeZeroYieldCurve(zeroBondData, mc);

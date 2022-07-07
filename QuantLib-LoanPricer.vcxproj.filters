@@ -39,6 +39,9 @@
     <ClInclude Include="Test\Loans.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Test\LiborSwapTest.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BootStrapper\BootStrapper.cpp">
@@ -68,5 +71,25 @@
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Test\LiborSwapTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="Market\data\MarketDataDepoEUR.xml">
+      <Filter>Resource Files</Filter>
+    </Xml>
+    <Xml Include="Market\data\MarketDataFlatCFVolaEUR.xml">
+      <Filter>Resource Files</Filter>
+    </Xml>
+    <Xml Include="Market\data\MarketDataLibor6MSwapEUR.xml">
+      <Filter>Resource Files</Filter>
+    </Xml>
+    <Xml Include="Market\data\MarketDataOISwapEUR.xml">
+      <Filter>Resource Files</Filter>
+    </Xml>
+    <Xml Include="Market\data\MarketDataZeroYield6MEUR.xml">
+      <Filter>Resource Files</Filter>
+    </Xml>
   </ItemGroup>
 </Project>

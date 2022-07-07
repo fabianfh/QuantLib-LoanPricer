@@ -118,11 +118,16 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <DisableSpecificWarnings>4996</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(BOOST_DIR)\stage\lib;$(QL_DIR)\lib</AdditionalLibraryDirectories>
     </Link>
+    <PostBuildEvent>
+      <Command>copy Market\data\*.xml x64\Debug</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -147,6 +152,7 @@
     <ClInclude Include="Market\MarketConvention.hpp" />
     <ClInclude Include="Market\MarketData.hpp" />
     <ClInclude Include="Test\CapletStripperTest.hpp" />
+    <ClInclude Include="Test\LiborSwapTest.hpp" />
     <ClInclude Include="Test\Loans.hpp" />
     <ClInclude Include="Test\OISwapTest.hpp" />
   </ItemGroup>
@@ -158,8 +164,26 @@
     <ClCompile Include="Market\MarketConvention.cpp" />
     <ClCompile Include="Market\MarketData.cpp" />
     <ClCompile Include="Test\CapletStripperTest.cpp" />
+    <ClCompile Include="Test\LiborSwapTest.cpp" />
     <ClCompile Include="Test\Loans.cpp" />
     <ClCompile Include="Test\OISwapTest.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="Market\data\MarketDataDepoEUR.xml">
+      <DeploymentContent>true</DeploymentContent>
+    </Xml>
+    <Xml Include="Market\data\MarketDataFlatCFVolaEUR.xml">
+      <DeploymentContent>true</DeploymentContent>
+    </Xml>
+    <Xml Include="Market\data\MarketDataLibor6MSwapEUR.xml">
+      <DeploymentContent>true</DeploymentContent>
+    </Xml>
+    <Xml Include="Market\data\MarketDataOISwapEUR.xml">
+      <DeploymentContent>true</DeploymentContent>
+    </Xml>
+    <Xml Include="Market\data\MarketDataZeroYield6MEUR.xml">
+      <DeploymentContent>true</DeploymentContent>
+    </Xml>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

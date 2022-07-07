@@ -33,3 +33,5 @@
 
 # dir
 build/
+/.vs
+/x64
