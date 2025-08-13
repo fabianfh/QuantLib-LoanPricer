@@ -1,0 +1,29 @@
+﻿  BootStrapper.cpp
+  optionletstripper.cpp
+  Utils.cpp
+  Main.cpp
+C:\Users\fhoefer\source\repos\QuantLib-LoanPricer\Main.cpp(23,33): warning C4081: expected 'newline'; found '.'
+  MarketConvention.cpp
+  MarketData.cpp
+C:\Users\fhoefer\source\repos\QuantLib-LoanPricer\Market\MarketData.cpp(130,13): warning C4930: 'QuantLib::Actual360 dcc2(void)': prototyped function not called (was a variable definition intended?)
+C:\Users\fhoefer\source\repos\QuantLib-LoanPricer\Market\MarketData.cpp(192,27): warning C4930: 'boost::filesystem::path full_path(boost::filesystem::path)': prototyped function not called (was a variable definition intended?)
+  CapletStripperTest.cpp
+  LiborSwapTest.cpp
+  Loans.cpp
+  OISwapTest.cpp
+  Generating Code...
+C:\Users\fhoefer\source\repos\QuantLib-LoanPricer\Test\LiborSwapTest.cpp(1,1): error C1085: Cannot write compiler generated file: 'C:\Users\fhoefer\source\repos\QuantLib-LoanPricer\QuantLib.da71fcb2\x64\Debug\LiborSwapTest.obj': No space left on device
+C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(787,5): error MSB6003: The specified task executable "CL.exe" could not be run. System.IO.IOException: There is not enough space on the disk.
+C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(787,5): error MSB6003: 
+C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(787,5): error MSB6003:    at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(787,5): error MSB6003:    at System.IO.FileStream.WriteCore(Byte[] buffer, Int32 offset, Int32 count)
+C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(787,5): error MSB6003:    at System.IO.FileStream.FlushWrite(Boolean calledFromFinalizer)
+C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(787,5): error MSB6003:    at System.IO.FileStream.Dispose(Boolean disposing)
+C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(787,5): error MSB6003:    at System.IO.Stream.Close()
+C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(787,5): error MSB6003:    at System.IO.StreamWriter.Dispose(Boolean disposing)
+C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(787,5): error MSB6003:    at System.IO.TextWriter.Dispose()
+C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(787,5): error MSB6003:    at Microsoft.Build.CPPTasks.TrackedVCToolTask.WriteSourcesToCommandLinesTable(IDictionary`2 sourcesToCommandLines)
+C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(787,5): error MSB6003:    at Microsoft.Build.CPPTasks.CL.PostExecuteTool(Int32 exitCode)
+C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(787,5): error MSB6003:    at Microsoft.Build.CPPTasks.TrackedVCToolTask.ExecuteTool(String pathToTool, String responseFileCommands, String commandLineCommands)
+C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(787,5): error MSB6003:    at Microsoft.Build.CPPTasks.CL.ExecuteTool(String pathToTool, String responseFileCommands, String commandLineCommands)
+C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(787,5): error MSB6003:    at Microsoft.Build.Utilities.ToolTask.Execute()

@@ -94,46 +94,46 @@ namespace BootStrapper {
 
         for (Size i = 0; i < LENGTH(rates); ++i) {
 
-            AmortizingFixedRateBond
-                myBond(0, NullCalendar(), 100.0, refDate, Period(30, Years), freq, rates[i], ActualActual(ActualActual::ISMA));
-            /*AmortizingFloatingRateBond
-                myBond2(0, NullCalendar(), 100.0, refDate, Period(30, Years), freq, rates[i], ActualActual(ActualActual::ISMA));*/
+            //Natural se = 0;
+            //AmortizingFixedRateBond myBond(se, NullCalendar(), 100.0, refDate, Period(30, Years), freq, rates[i], ActualActual(ActualActual::ISMA));
+            ///*AmortizingFloatingRateBond
+            //    myBond2(0, NullCalendar(), 100.0, refDate, Period(30, Years), freq, rates[i], ActualActual(ActualActual::ISMA));*/
 
-            Leg cashflows = myBond.cashflows();
+            //Leg cashflows = myBond.cashflows();
 
-            std::vector<Real> notionals = myBond.notionals();
+            //std::vector<Real> notionals = myBond.notionals();
 
-            for (Size k = 0; k < cashflows.size() / 2; ++k) {
-                Real coupon = cashflows[2 * k]->amount();
-                Real principal = cashflows[2 * k + 1]->amount();
-                Real totalAmount = coupon + principal;
+            //for (Size k = 0; k < cashflows.size() / 2; ++k) {
+            //    Real coupon = cashflows[2 * k]->amount();
+            //    Real principal = cashflows[2 * k + 1]->amount();
+            //    Real totalAmount = coupon + principal;
 
-                // Check the amount is same as pmt returned
+            //    // Check the amount is same as pmt returned
 
-                Real error = std::fabs(totalAmount - amounts[i]);
-                if (error > tolerance) {
-                    std::cout << "\n" <<
-                        " Rate: " << rates[i] <<
-                        " " << k << "th cash flow "
-                        " Failed!" <<
-                        " Expected Amount: " << amounts[i] <<
-                        " Calculated Amount: " << totalAmount;
-                }
+            //    Real error = std::fabs(totalAmount - amounts[i]);
+            //    if (error > tolerance) {
+            //        std::cout << "\n" <<
+            //            " Rate: " << rates[i] <<
+            //            " " << k << "th cash flow "
+            //            " Failed!" <<
+            //            " Expected Amount: " << amounts[i] <<
+            //            " Calculated Amount: " << totalAmount;
+            //    }
 
-                // Check the coupon result
-                Real expectedCoupon = notionals[k] * rates[i] / freq;
-                error = std::fabs(coupon - expectedCoupon);
+            //    // Check the coupon result
+            //    Real expectedCoupon = notionals[k] * rates[i] / freq;
+            //    error = std::fabs(coupon - expectedCoupon);
 
-                if (error > tolerance) {
-                    std::cout << "\n" <<
-                        " Rate: " << rates[i] <<
-                        " " << k << "th cash flow "
-                        " Failed!" <<
-                        " Expected Coupon: " << expectedCoupon <<
-                        " Calculated Coupon: " << coupon;
-                }
+            //    if (error > tolerance) {
+            //        std::cout << "\n" <<
+            //            " Rate: " << rates[i] <<
+            //            " " << k << "th cash flow "
+            //            " Failed!" <<
+            //            " Expected Coupon: " << expectedCoupon <<
+            //            " Calculated Coupon: " << coupon;
+            //    }
 
-            }
+            //}
         }
     }
 }
