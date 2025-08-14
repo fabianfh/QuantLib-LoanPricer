@@ -1,7 +1,11 @@
-﻿  QuantLib-LoanPricer.vcxproj -> C:\Users\fhoefer\source\repos\QuantLib-LoanPricer\x64\Debug\QuantLib-LoanPricer.exe
+﻿  MarketData.cpp
+  QuantLib-LoanPricer.vcxproj -> C:\Users\fhoefer\source\repos\QuantLib-LoanPricer\x64\Debug\QuantLib-LoanPricer.exe
   Market\data\MarketDataDepoEUR.xml
   Market\data\MarketDataFlatCFVolaEUR.xml
   Market\data\MarketDataLibor6MSwapEUR.xml
+  Market\data\MarketDataOISwapEONIA.xml
   Market\data\MarketDataOISwapEUR.xml
+  Market\data\MarketDataSofrFuture.xml
+  Market\data\MarketDataSOFRSwapUSD.xml
   Market\data\MarketDataZeroYield6MEUR.xml
-          5 file(s) copied.
+          8 file(s) copied.

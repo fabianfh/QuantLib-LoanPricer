@@ -9,7 +9,7 @@ namespace BootStrapper {
 		std::vector<Date> fixingDates;
 
 		for (Size i = 0; i < cashflows.size(); ++i) {
-			boost::shared_ptr<FloatingRateCoupon> coupon =
+			ext::shared_ptr<FloatingRateCoupon> coupon =
 				boost::dynamic_pointer_cast<FloatingRateCoupon>(cashflows[i]);
 			if (coupon)
 				fixingDates.push_back(coupon->fixingDate());
@@ -20,30 +20,30 @@ namespace BootStrapper {
 
 #define LENGTH(a) (sizeof(a)/sizeof(a[0]))
 
-	bool  LiborSwapTest::testBootstrap(
-		boost::shared_ptr<PiecewiseFlatForward> discCurve,
-		boost::shared_ptr<PiecewiseFlatForward> fwdCurve,
+	bool  LiborSwapTest::testLiborBootstrap(
+		ext::shared_ptr<PiecewiseYieldCurve<Discount, Linear>> discCurve,
+		ext::shared_ptr<PiecewiseYieldCurve<Discount, Linear>> fwdCurve,
 		MarketConventions mc, MarketData md, Real tolerance)
 	{
 		bool success = true;
-		Real nominal = 100;Real spread = 0;
+		Real nominal = 100; Real spread = 0;
 		RelinkableHandle<YieldTermStructure> eoniaTermStructure;
 		eoniaTermStructure.linkTo(discCurve);
-		boost::shared_ptr<Eonia> eoniaIndex = boost::shared_ptr<Eonia>(new Eonia(eoniaTermStructure));
+		ext::shared_ptr<Eonia> eoniaIndex = ext::shared_ptr<Eonia>(new Eonia(eoniaTermStructure));
 
 		RelinkableHandle<YieldTermStructure> Libor3MTermStructure;
 		Libor3MTermStructure.linkTo(fwdCurve);
-		boost::shared_ptr<IborIndex> euriborIndex(new Euribor3M(Libor3MTermStructure));
+		ext::shared_ptr<IborIndex> euriborIndex(new Euribor3M(Libor3MTermStructure));
 
-		for (Size i = 0; i < md.swapData.size(); i++) {
-			Rate expected = md.swapData[i].rate;
-			Period term = md.swapData[i].nTermUnits * md.swapData[i].termUnit;
+		for (Size i = 0; i < md.liborSwap6mEUR.size(); i++) {
+			Rate expected = md.liborSwap6mEUR[i].rate;
+			Period term = md.liborSwap6mEUR[i].nTermUnits * md.liborSwap6mEUR[i].termUnit;
 
 			VanillaSwap::Type swapType = VanillaSwap::Payer;
-			Period tenor = md.swapData[i].nIndexUnits* md.swapData[i].indexUnit;
+			Period tenor = md.liborSwap6mEUR[i].nIndexUnits * md.liborSwap6mEUR[i].indexUnit;
 
 			Period fixedLegTenor = 1 * Years;
-			Period floatingLegTenor = md.swapData[i].nIndexUnits * md.swapData[i].indexUnit;
+			Period floatingLegTenor = md.liborSwap6mEUR[i].nIndexUnits * md.liborSwap6mEUR[i].indexUnit;
 			Period fwdStart = 0 * Days;
 
 			VanillaSwap swap = MakeVanillaSwap(term, euriborIndex, expected, fwdStart)
@@ -59,7 +59,7 @@ namespace BootStrapper {
 			Rate error = std::fabs(expected - calculated);
 			Real npv = swap.NPV();
 
-			std::cout << "Libor Swap " << md.swapData[i].nTermUnits << "x" << md.swapData[i].termUnit << ":  quoted rate: " << io::rate(md.swapData[i].rate) << "\t Fair Rate: " << io::rate(swap.fairRate()) << std::endl;
+			std::cout << "Libor Swap " << md.liborSwap6mEUR[i].nTermUnits << "x" << md.liborSwap6mEUR[i].termUnit << ":  quoted rate: " << io::rate(md.liborSwap6mEUR[i].rate) << "\t Fair Rate: " << io::rate(swap.fairRate()) << std::endl;
 
 			if (error > tolerance)
 			{
@@ -76,6 +76,10 @@ namespace BootStrapper {
 		return success;
 	}
 }
+
+
+
+
 
 
 

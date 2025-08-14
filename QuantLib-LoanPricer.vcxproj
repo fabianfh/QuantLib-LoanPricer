@@ -157,43 +157,36 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="BootStrapper\BootStrapper.hpp" />
-    <ClInclude Include="BootStrapper\optionletstripper.hpp" />
     <ClInclude Include="BootStrapper\Utils.hpp" />
+    <ClInclude Include="Main.h" />
     <ClInclude Include="Market\MarketConvention.hpp" />
     <ClInclude Include="Market\MarketData.hpp" />
     <ClInclude Include="Test\CapletStripperTest.hpp" />
     <ClInclude Include="Test\LiborSwapTest.hpp" />
     <ClInclude Include="Test\Loans.hpp" />
     <ClInclude Include="Test\OISwapTest.hpp" />
+    <ClInclude Include="Test\RFRTest.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BootStrapper\BootStrapper.cpp" />
-    <ClCompile Include="BootStrapper\optionletstripper.cpp" />
     <ClCompile Include="BootStrapper\Utils.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Market\MarketConvention.cpp" />
     <ClCompile Include="Market\MarketData.cpp" />
     <ClCompile Include="Test\CapletStripperTest.cpp" />
     <ClCompile Include="Test\LiborSwapTest.cpp" />
     <ClCompile Include="Test\Loans.cpp" />
     <ClCompile Include="Test\OISwapTest.cpp" />
+    <ClCompile Include="Test\RFRTest.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Xml Include="Market\data\MarketDataDepoEUR.xml">
-      <DeploymentContent>true</DeploymentContent>
-    </Xml>
-    <Xml Include="Market\data\MarketDataFlatCFVolaEUR.xml">
-      <DeploymentContent>true</DeploymentContent>
-    </Xml>
-    <Xml Include="Market\data\MarketDataLibor6MSwapEUR.xml">
-      <DeploymentContent>true</DeploymentContent>
-    </Xml>
-    <Xml Include="Market\data\MarketDataOISwapEUR.xml">
-      <DeploymentContent>true</DeploymentContent>
-    </Xml>
-    <Xml Include="Market\data\MarketDataZeroYield6MEUR.xml">
-      <DeploymentContent>true</DeploymentContent>
-    </Xml>
+    <Xml Include="Market\data\MarketDataDepoEUR.xml" />
+    <Xml Include="Market\data\MarketDataFlatCFVolaEUR.xml" />
+    <Xml Include="Market\data\MarketDataLibor6MSwapEUR.xml" />
+    <Xml Include="Market\data\MarketDataOISwapEONIA.xml" />
+    <Xml Include="Market\data\MarketDataOISwapEUR.xml" />
+    <Xml Include="Market\data\MarketDataSofrFuture.xml" />
+    <Xml Include="Market\data\MarketDataSOFRSwapUSD.xml" />
+    <Xml Include="Market\data\MarketDataZeroYield6MEUR.xml" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -12,22 +12,22 @@ namespace BootStrapper {
 
 #define LENGTH(a) (sizeof(a)/sizeof(a[0]))
 
-	bool  OISwapTest::testBootstrap(boost::shared_ptr<PiecewiseFlatForward> discCurve, MarketConventions mc, MarketData md, Real tolerance) 
+	bool  OISwapTest::testEONIABootstrap(ext::shared_ptr<PiecewiseYieldCurve<Discount, Linear>> discCurve, MarketConventions mc, MarketData md, Real tolerance)
 	{
 		Real nominal = 100; bool success = true;
 		RelinkableHandle<YieldTermStructure> eoniaTermStructure(discCurve);
-		boost::shared_ptr<Eonia> eoniaIndex = boost::shared_ptr<Eonia>(new Eonia(eoniaTermStructure));
-		for (Size i = 0; i < md.eoniaSwapData.size(); i++) {
-			Rate expected = md.eoniaSwapData[i].rate;
-			Period term = md.eoniaSwapData[i].n * md.eoniaSwapData[i].unit;
-			
-			boost::shared_ptr<OvernightIndexedSwap> swap = MakeOIS(term, eoniaIndex, expected).withEffectiveDate(mc.settlement).withOvernightLegSpread(0).withNominal(nominal).withDiscountingTermStructure(eoniaTermStructure);
+		ext::shared_ptr<Eonia> eoniaIndex = ext::shared_ptr<Eonia>(new Eonia(eoniaTermStructure));
+		for (Size i = 0; i < md.eoniaSwapEUR.size(); i++) {
+			Rate expected = md.eoniaSwapEUR[i].rate;
+			Period term = md.eoniaSwapEUR[i].n * md.eoniaSwapEUR[i].unit;
+
+			ext::shared_ptr<OvernightIndexedSwap> swap = MakeOIS(term, eoniaIndex, expected).withEffectiveDate(mc.settlement).withOvernightLegSpread(0).withNominal(nominal).withDiscountingTermStructure(eoniaTermStructure);
 
 			Rate calculated = swap->fairRate();
 			Rate error = std::fabs(expected - calculated);
 			Real npv = swap->NPV();
 
-			std::cout << "OISwap " << md.eoniaSwapData[i].n << "x" << md.eoniaSwapData[i].unit << ":  quoted rate: " << io::rate(md.eoniaSwapData[i].rate ) << "\t Fair Rate: " << io::rate(swap->fairRate()) << std::endl;
+			std::cout << "OISwap " << md.eoniaSwapEUR[i].n << "x" << md.eoniaSwapEUR[i].unit << ":  quoted rate: " << io::rate(md.eoniaSwapEUR[i].rate) << "\t Fair Rate: " << io::rate(swap->fairRate()) << std::endl;
 
 			if (error > tolerance)
 			{
@@ -44,6 +44,9 @@ namespace BootStrapper {
 		}
 		return success;
 	}
+
+
+
 }
 
 

@@ -18,9 +18,6 @@
     <ClInclude Include="BootStrapper\BootStrapper.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="BootStrapper\optionletstripper.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="BootStrapper\Utils.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -42,18 +39,18 @@
     <ClInclude Include="Test\LiborSwapTest.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Main.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Test\RFRTest.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BootStrapper\BootStrapper.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="BootStrapper\optionletstripper.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="BootStrapper\Utils.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Market\MarketConvention.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Market\MarketData.cpp">
@@ -74,6 +71,9 @@
     <ClCompile Include="Test\LiborSwapTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Test\RFRTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Xml Include="Market\data\MarketDataDepoEUR.xml">
@@ -89,6 +89,15 @@
       <Filter>Resource Files</Filter>
     </Xml>
     <Xml Include="Market\data\MarketDataZeroYield6MEUR.xml">
+      <Filter>Resource Files</Filter>
+    </Xml>
+    <Xml Include="Market\data\MarketDataOISwapEONIA.xml">
+      <Filter>Resource Files</Filter>
+    </Xml>
+    <Xml Include="Market\data\MarketDataSofrFuture.xml">
+      <Filter>Resource Files</Filter>
+    </Xml>
+    <Xml Include="Market\data\MarketDataSOFRSwapUSD.xml">
       <Filter>Resource Files</Filter>
     </Xml>
   </ItemGroup>

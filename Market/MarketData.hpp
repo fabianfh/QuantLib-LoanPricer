@@ -9,7 +9,8 @@
 #include <ql/termstructures/yieldtermstructure.hpp>
 #include <ql/termstructures/volatility/capfloor/capfloortermvolsurface.hpp>
 #include <ql/termstructures/volatility/capfloor/capfloortermvolcurve.hpp>
-#include <boost/shared_ptr.hpp>
+#include <ql/cashflows/rateaveraging.hpp>
+//#include <boost/shared_ptr.hpp>
 
 
 
@@ -17,7 +18,7 @@
 namespace BootStrapper {
 	using namespace QuantLib;
 #define LENGTH(a) (sizeof(a)/sizeof(a[0]))
-	
+
 	struct VolaObs {
 		Integer settlementDays;
 		Integer nIndexUnits;
@@ -28,8 +29,9 @@ namespace BootStrapper {
 		Real strike;
 		Volatility vola;
 	};
-	
-	struct DepoObs {
+
+
+	struct DepoSwapObs {
 		Integer settlementDays;
 		Integer n;
 		TimeUnit unit;
@@ -40,11 +42,10 @@ namespace BootStrapper {
 		Integer settlementDays;
 		Integer nExpiry;
 		Integer nMaturity;
-		//        TimeUnit units;
 		Rate rate;
 	};
 
-	struct SwapObs {
+	struct LiborSwapObs {
 		Integer settlementDays;
 		Integer nIndexUnits;
 		TimeUnit indexUnit;
@@ -53,27 +54,86 @@ namespace BootStrapper {
 		Rate rate;
 	};
 
+	struct SofrFutureObs {
+		Frequency freq;
+		Month month;
+		Year year;
+		Real price;
+		Rate rate;
+		RateAveraging::Type averagingMethod;
+	};
+
+	struct MarketConventions {
+		Natural settlementDays;
+		Date settlement;
+		Calendar calendar;
+		Period fixedEoniaPeriod, floatingEoniaPeriod;
+		DayCounter fixedEoniaDayCount;
+		BusinessDayConvention fixedEoniaConvention, floatingEoniaConvention;
+
+		Frequency fixedSwapFrequency;
+		DayCounter fixedSwapDayCount;
+		BusinessDayConvention fixedSwapConvention;
+
+
+		Frequency floatSwapFrequency;
+		DayCounter floatSwapDayCount;
+		BusinessDayConvention floatSwapConvention;
+
+
+
+		MarketConventions() {
+
+			settlementDays = 2;
+			calendar = TARGET();
+			settlement = calendar.advance(Settings::instance().evaluationDate(), settlementDays * Days, Following);
+
+			fixedEoniaConvention = ModifiedFollowing;
+			floatingEoniaConvention = ModifiedFollowing;
+			fixedEoniaPeriod = 1 * Years;
+			floatingEoniaPeriod = 1 * Years;
+			fixedEoniaDayCount = Actual360();
+
+			fixedSwapConvention = ModifiedFollowing;
+			fixedSwapFrequency = Annual;
+			fixedSwapDayCount = Thirty360(Thirty360::German);
+
+
+			floatSwapConvention = ModifiedFollowing;
+			floatSwapFrequency = Quarterly;
+			floatSwapDayCount = Actual360();
+
+		}
+	};
+
 	class MarketData {
 	public:
 		MarketData();
-		std::vector<DepoObs> depositData;		
-		std::vector<DepoObs> eoniaSwapData;
+		std::vector<SofrFutureObs> sofrFutureUSD;
+		std::vector<DepoSwapObs> depoEUR;
+		std::vector<DepoSwapObs> eoniaSwapEUR;
+		std::vector<DepoSwapObs> sofrSwapUSD;
+		std::vector<SofrFutureObs> SwapEUR;
 		std::vector<FraObs> fraData;
-		std::vector<SwapObs> swapData;
-		std::vector<SwapObs> zeroBondData;
-		std::vector<VolaObs> volSurfaceData;
+		std::vector<LiborSwapObs> liborSwap6mEUR;
+		std::vector<LiborSwapObs> zeroYield6mLiborEUR;
+		std::vector<VolaObs> capfloorVolaEUR;
+
 
 		std::vector<Rate> strikes;
 		std::vector<Period> optionTenors;
 		Matrix termV;
 
-		std::map<std::string, boost::shared_ptr<CapFloorTermVolSurface> >  mdContainer;
-		std::map<std::string, boost::shared_ptr<YieldTermStructure> >  mdContainer2;
+		std::map<std::string, ext::shared_ptr<CapFloorTermVolSurface> >  mdContainer;
+		std::map<std::string, ext::shared_ptr<YieldTermStructure> >  mdContainer2;
 		Handle<CapFloorTermVolCurve> atmVols;
 
 		Real tolerance = 0.000000001;
-		Natural maxIter = 10000;	
-	
+		Natural maxIter = 10000;
+
+
+
 	};
 }
+
 #endif 

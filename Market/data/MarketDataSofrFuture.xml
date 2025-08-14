@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vectorSofrFuture>  
+  <name>SofrFuture</name>
+  <SofrFurureObs>    
+    <settlementDays>0</settlementDays>
+    <n>1</n>
+    <unit>Days</unit>
+    <rate>0.0110</rate>
+  </SofrFurureObs>
+  <SofrFurureObs>
+    <settlementDays>1</settlementDays>
+    <n>1</n>
+    <unit>Days</unit>
+    <rate>0.0110</rate>
+  </SofrFurureObs>
+  <SofrFurureObs>
+    <settlementDays>2</settlementDays>
+    <n>1</n>
+    <unit>Weeks</unit>
+    <rate>0.0140</rate>
+  </SofrFurureObs>
+  <SofrFurureObs>
+    <settlementDays>2</settlementDays>
+    <n>2</n>
+    <unit>Weeks</unit>
+    <rate>0.0150</rate>
+  </SofrFurureObs>
+  <SofrFurureObs>
+    <settlementDays>2</settlementDays>
+    <n>1</n>
+    <unit>Months</unit>
+    <rate>0.0170</rate>
+  </SofrFurureObs>
+  <SofrFurureObs>
+    <settlementDays>2</settlementDays>
+    <n>2</n>
+    <unit>Months</unit>
+    <rate>0.0190</rate>
+  </SofrFurureObs>
+  <SofrFurureObs>
+    <settlementDays>2</settlementDays>
+    <n>3</n>
+    <unit>Months</unit>
+    <rate>0.0205</rate>
+  </SofrFurureObs>  
+</vectorSofrFuture>
+
+

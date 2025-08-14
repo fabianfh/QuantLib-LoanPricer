@@ -5,23 +5,7 @@
       <FullPath>C:\Users\fhoefer\source\repos\QuantLib-LoanPricer\x64\Debug\QuantLib-LoanPricer.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
-  <ContentFiles>
-    <ContentFile>
-      <FullPath>C:\Users\fhoefer\source\repos\QuantLib-LoanPricer\Market\data\MarketDataDepoEUR.xml</FullPath>
-    </ContentFile>
-    <ContentFile>
-      <FullPath>C:\Users\fhoefer\source\repos\QuantLib-LoanPricer\Market\data\MarketDataFlatCFVolaEUR.xml</FullPath>
-    </ContentFile>
-    <ContentFile>
-      <FullPath>C:\Users\fhoefer\source\repos\QuantLib-LoanPricer\Market\data\MarketDataLibor6MSwapEUR.xml</FullPath>
-    </ContentFile>
-    <ContentFile>
-      <FullPath>C:\Users\fhoefer\source\repos\QuantLib-LoanPricer\Market\data\MarketDataOISwapEUR.xml</FullPath>
-    </ContentFile>
-    <ContentFile>
-      <FullPath>C:\Users\fhoefer\source\repos\QuantLib-LoanPricer\Market\data\MarketDataZeroYield6MEUR.xml</FullPath>
-    </ContentFile>
-  </ContentFiles>
+  <ContentFiles />
   <SatelliteDlls />
   <NonRecipeFileRefs />
 </Project>
